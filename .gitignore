@@ -15,3 +15,5 @@ web-build/
 .DS_Store
 
 yarn.lock
+
+*.config*
