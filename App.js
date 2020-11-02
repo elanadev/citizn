@@ -3,8 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-
-import config from './firebase.config';
+import db from './firebase.config';
 
 import Welcome from './components/Welcome';
 import Second from './components/Second';

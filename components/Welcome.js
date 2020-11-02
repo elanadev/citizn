@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import db from '../firebase.config';
 
 const styles = StyleSheet.create({
   container: {
@@ -21,6 +22,20 @@ const Welcome = ({ navigation }) => (
       }}
     >
       <Text style={{ fontSize: 20, color: '#fff' }}>Click me to go to the next page</Text>
+    </TouchableOpacity>
+
+    <TouchableOpacity
+      onPress={() => {
+        db.ref('users/another').set({
+          username: 'anotheuser',
+          email: 'elanadev@gmail.com',
+        });
+      }}
+      style={{
+        backgroundColor: 'red',
+      }}
+    >
+      <Text style={{ fontSize: 20, color: '#fff' }}>Write Data</Text>
     </TouchableOpacity>
   </View>
 );
