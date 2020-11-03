@@ -1,43 +1,46 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity } from 'react-native';
+
 import db from '../firebase.config';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
-
 const Welcome = ({ navigation }) => (
-  <View style={styles.container}>
-    <Text>Its working!</Text>
+  <SafeAreaView style={{ flex: 1 }}>
+    <Text> What would you like to do?</Text>
 
-    <TouchableOpacity
-      onPress={() => navigation.navigate('Second', { name: 'Second' })}
-      style={{
-        backgroundColor: 'black',
-      }}
-    >
-      <Text style={{ fontSize: 20, color: '#fff' }}>Click me to go to the next page</Text>
-    </TouchableOpacity>
+    <View style={{ flex: 1 }}>
+      <TouchableOpacity
+        onPress={() => navigation.navigate('Study', { name: 'Study' })}
+        style={{
+          backgroundColor: 'black',
+          paddingVertical: 50,
+          alignItems: 'center',
+        }}
+      >
+        <Text style={{ fontSize: 20, color: '#fff' }}>Study</Text>
+      </TouchableOpacity>
 
-    <TouchableOpacity
-      onPress={() => {
-        db.ref('users/another').set({
-          username: 'anotheuser',
-          email: 'elanadev@gmail.com',
-        });
-      }}
-      style={{
-        backgroundColor: 'red',
-      }}
-    >
-      <Text style={{ fontSize: 20, color: '#fff' }}>Write Data</Text>
-    </TouchableOpacity>
-  </View>
+      <TouchableOpacity
+        onPress={() => navigation.navigate('Practice', { name: 'Practice' })}
+        style={{
+          backgroundColor: 'blue',
+          paddingVertical: 50,
+          alignItems: 'center',
+        }}
+      >
+        <Text style={{ fontSize: 20, color: '#fff' }}>Practice</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => navigation.navigate('Quiz', { name: 'Quiz' })}
+        style={{
+          backgroundColor: 'red',
+          paddingVertical: 50,
+          alignItems: 'center',
+        }}
+      >
+        <Text style={{ fontSize: 20, color: '#fff' }}>Quiz</Text>
+      </TouchableOpacity>
+    </View>
+  </SafeAreaView>
 );
 
 export default Welcome;

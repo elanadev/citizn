@@ -4,16 +4,16 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'red',
     alignItems: 'center',
     justifyContent: 'center',
   },
 });
 
-const Second = () => (
+const Quiz = () => (
   <View style={styles.container}>
-    <Text>Hi! I am the second page. You got here!</Text>
+    <Text>Hi! I am the Quiz page. You got here!</Text>
   </View>
 );
 
-export default Second;
+export default Quiz;

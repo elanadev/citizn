@@ -25,3 +25,5 @@ firebase.config.js
 app.json
 .eslintrc.json
 .prettierrc.json
+
+.vscode
