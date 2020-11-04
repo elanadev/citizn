@@ -23,7 +23,7 @@ class Study extends React.Component {
       return '📜  ' + str
     })
 
-    const text = capped.join('\n')
+    const responses = capped.join('\n')
 
     const leadingZero = (num) => { if (num < 10) { return `0${num}` } else { return `${num}` } }
     const audioUrl = `https://www.uscis.gov/sites/default/files/document/audio/Track%20${leadingZero(index + 1)}.mp3`
@@ -75,7 +75,7 @@ class Study extends React.Component {
         <Text style={{ fontSize: 12 }}>{item.heading}</Text>
         <Text style={{ fontSize: 12 }}>{item.subheading}</Text>
         <Text style={{ fontSize: 24, marginVertical: 20, textShadowColor: 'white', textShadowOffset: { width: 0.3, height: 0.3 }, textShadowRadius: 1 }}>{item.question}</Text>
-        <Text style={{ fontSize: 16, lineHeight: 32 }}>{text}</Text>
+        <Text style={{ fontSize: 16, lineHeight: 32 }}>{responses}</Text>
       </ScrollView>
     )
   }
@@ -90,7 +90,7 @@ class Study extends React.Component {
 
             <View style={{ marginTop: 50 }}>
               <Carousel
-                layout={"stack"}
+                layout={"default"}
                 ref={ref => this.carousel = ref}
                 data={questions}
                 sliderWidth={400}

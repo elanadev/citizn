@@ -10,6 +10,8 @@ import Study from './components/Study';
 import Practice from './components/Practice';
 import Quiz from './components/Quiz';
 
+//https://projects.propublica.org/api-docs/congress-api/members/#get-current-members-by-statedistrict
+
 const Stack = createStackNavigator();
 
 const App = () => {
@@ -34,7 +36,9 @@ const App = () => {
           <Stack.Screen name="Study" options={{ title: 'Study' }}>
             {props => <Study questions={questions} />}
           </Stack.Screen>
-          <Stack.Screen name="Practice" component={Practice} options={{ title: 'Practice' }} />
+          <Stack.Screen name="Practice" options={{ title: 'Practice' }}>
+            {props => <Practice questions={questions} />}
+          </Stack.Screen>
           <Stack.Screen name="Quiz" component={Quiz} options={{ title: 'Quiz' }} />
         </Stack.Navigator>
       </NavigationContainer>

@@ -1,7 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, View, SafeAreaView, Pressable, ImageBackground } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, Pressable, ImageBackground, Image, TouchableOpacity } from 'react-native';
 import Blackboard from '../assets/blackboard.jpeg';
-import { Autocomplete } from 'react-native-autocomplete-input';
+import stateList from './states'
 
 import db from '../firebase.config';
 
@@ -18,41 +18,70 @@ const styles = StyleSheet.create({
   buttonText: {
     fontSize: 30,
     color: '#00001a'
+  },
+});
+
+class Welcome extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      states: stateList,
+      query: '',
+      residentState: ''
+    };
   }
-})
 
-const Welcome = ({ navigation }) => (
-  <SafeAreaView style={{ flex: 1 }}>
-    <Text> What would you like to do?</Text>
 
-    <View style={{ flex: 1, justifyContent: 'space-evenly', marginVertical: 70 }}>
-      <Pressable
-        onPress={() => navigation.navigate('Study', { name: 'Study' })}
-        style={({ pressed }) => [
-          {
-            backgroundColor: pressed ? 'rgb(210, 230, 255)' : 'red',
-          },
-          styles.button,
-        ]}
-      >
-        <Text style={styles.buttonText}>Study</Text>
-        <ImageBackground source={Blackboard} style={{ flex: 1 }}></ImageBackground>
-      </Pressable>
+  render() {
+    const { navigation } = this.props
 
-      <Pressable
-        onPress={() => navigation.navigate('Practice', { name: 'Practice' })}
-        style={styles.button}>
-        <Text style={styles.buttonText}>Practice</Text>
-      </Pressable>
+    return (
+      <SafeAreaView style={{ flex: 1 }}>
+        {/* <Text> What state do you live in?</Text> */}
 
-      <Pressable
-        onPress={() => navigation.navigate('Quiz', { name: 'Quiz' })}
-        style={styles.button}>
-        <Text style={styles.buttonText}>Quiz</Text>
-      </Pressable>
+        <View style={{ flex: 1, justifyContent: 'space-evenly', marginVertical: 70 }}>
+          <Pressable
+            onPress={() => navigation.navigate('Study', { name: 'Study' })}
+            style={({ pressed }) => [
+              {
+                backgroundColor: pressed ? 'rgb(210, 230, 255)' : 'white',
+              },
+              styles.button,
+            ]}
+          >
+            <Text style={styles.buttonText}>Study</Text>
+          </Pressable>
 
-    </View>
-  </SafeAreaView>
-);
+          <Pressable
+            onPress={() => navigation.navigate('Practice', { name: 'Practice' })}
+            style={({ pressed }) => [
+              {
+                backgroundColor: pressed ? 'rgb(210, 230, 255)' : 'white',
+              },
+              styles.button,
+            ]}
+          >
+            <Text style={styles.buttonText}>Practice</Text>
+          </Pressable>
+
+          {/* <Pressable
+            onPress={() => navigation.navigate('Quiz', { name: 'Quiz' })}
+            style={({ pressed }) => [
+              {
+                backgroundColor: pressed ? 'rgb(210, 230, 255)' : 'white',
+              },
+              styles.button,
+            ]}
+          >
+            <Text style={styles.buttonText}>Quiz</Text>
+          </Pressable> */}
+
+        </View>
+      </SafeAreaView>
+    )
+  }
+};
+
+
 
 export default Welcome;

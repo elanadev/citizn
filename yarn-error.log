@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/Cellar/node/15.0.1/bin/node /usr/local/Cellar/yarn/1.22.10/libexec/bin/yarn.js add react-nativeo-sound
+  /usr/local/Cellar/node/15.0.1/bin/node /usr/local/Cellar/yarn/1.22.10/libexec/bin/yarn.js add expo-cil
 
 PATH: 
   /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
@@ -14,7 +14,7 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/react-nativeo-sound: Not found
+  Error: https://registry.yarnpkg.com/expo-cil: Not found
       at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.22.10/libexec/lib/cli.js:66988:18)
       at Request.self.callback (/usr/local/Cellar/yarn/1.22.10/libexec/lib/cli.js:140749:22)
       at Request.emit (node:events:327:20)
@@ -42,27 +42,24 @@ npm manifest:
       "@react-navigation/native": "^5.8.2",
       "@react-navigation/stack": "^5.11.1",
       "expo": "~39.0.2",
+      "expo-av": "~8.6.0",
       "expo-firebase-core": "~1.2.0",
       "expo-status-bar": "~1.0.2",
       "firebase": "^8.0.0",
       "firebase-tools": "^8.14.1",
-      "grommet": "^2.15.2",
-      "howler": "^2.2.1",
       "install": "^0.13.0",
       "polished": "^4.0.3",
       "react": "16.13.1",
       "react-dom": "16.13.1",
-      "react-howler": "^4.0.0",
       "react-native": "https://github.com/expo/react-native/archive/sdk-39.0.4.tar.gz",
+      "react-native-autocomplete-input": "^4.2.0",
       "react-native-elements": "^3.0.0-alpha.1",
       "react-native-gesture-handler": "~1.7.0",
-      "react-native-paper": "^4.3.0",
       "react-native-reanimated": "~1.13.0",
       "react-native-safe-area-context": "3.1.4",
       "react-native-screens": "~2.10.1",
       "react-native-snap-carousel": "^3.9.1",
       "react-native-web": "~0.13.12",
-      "react-player": "^2.6.2",
       "styled-components": "^5.2.1"
     },
     "devDependencies": {
@@ -70,10 +67,8 @@ npm manifest:
       "babel-eslint": "^10.1.0",
       "eslint": "^7.12.1",
       "eslint-config-airbnb": "^18.2.0",
-      "eslint-config-prettier": "^6.15.0",
       "eslint-plugin-import": "^2.22.1",
       "eslint-plugin-jsx-a11y": "^6.4.1",
-      "eslint-plugin-prettier": "^3.1.4",
       "eslint-plugin-react": "^7.21.5"
     },
     "private": true
@@ -1060,7 +1055,7 @@ Lockfile:
       core-js-pure "^3.0.0"
       regenerator-runtime "^0.13.4"
   
-  "@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.10.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.0", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.2":
+  "@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.10.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.0", "@babel/runtime@^7.8.4":
     version "7.12.1"
     resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.12.1.tgz#b4116a6b6711d010b2dad3b7b6e43bf1b9954740"
     integrity sha512-J5AIf3vPj3UwXaAzb5j1xM4WAQDX3EMgemF8rjCP3SoW09LfRKAXQKt6CoVYl230P6iWdRcBbnLDDdnqWxZSCA==
@@ -1099,14 +1094,6 @@ Lockfile:
       "@babel/helper-validator-identifier" "^7.10.4"
       lodash "^4.17.19"
       to-fast-properties "^2.0.0"
-  
-  "@callstack/react-theme-provider@^3.0.5":
-    version "3.0.5"
-    resolved "https://registry.yarnpkg.com/@callstack/react-theme-provider/-/react-theme-provider-3.0.5.tgz#a173e455e9603c9c45357a3b6ace1273086527ca"
-    integrity sha512-Iec+ybWN0FvNj87sD3oWo/49edGUP0UOSdMnzCJEFJIDYr992ECIuOV89burAAh2/ibPCxgLiK6dmgv2mO/8Tg==
-    dependencies:
-      deepmerge "^3.2.0"
-      hoist-non-react-statics "^3.3.0"
   
   "@cnakazawa/watch@^1.0.3":
     version "1.0.4"
@@ -3607,7 +3594,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/deepmerge/-/deepmerge-3.3.0.tgz#d3c47fd6f3a93d517b14426b0628a17b0125f5f7"
     integrity sha512-GRQOafGHwMHpjPx9iCvTgpu9NojZ49q794EEL94JVEw6VaeA8XTUyBKvAkOOjBX9oJNiV6G3P+T+tihFjo2TqA==
   
-  deepmerge@^4.0.0, deepmerge@^4.2.2:
+  deepmerge@^4.2.2:
     version "4.2.2"
     resolved "https://registry.yarnpkg.com/deepmerge/-/deepmerge-4.2.2.tgz#44d2ea3679b8f4d4ffba33f03d865fc1e7bf4955"
     integrity sha512-FJ3UgI4gIl+PHZm53knsuSFpE+nESMr7M4v9QcgB7S63Kj/6WqMiFQJpBBYz1Pt+66bZpP3Q7Lye0Oo9MPKEdg==
@@ -3976,13 +3963,6 @@ Lockfile:
       object.assign "^4.1.0"
       object.entries "^1.1.2"
   
-  eslint-config-prettier@^6.15.0:
-    version "6.15.0"
-    resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-6.15.0.tgz#7f93f6cb7d45a92f1537a70ecc06366e1ac6fed9"
-    integrity sha512-a1+kOYLR8wMGustcgAjdydMsQ2A/2ipRPwRKUmfYaSxc9ZPcrku080Ctl6zrZzZNs/U82MjSv+qKREkoq3bJaw==
-    dependencies:
-      get-stdin "^6.0.0"
-  
   eslint-import-resolver-node@^0.3.4:
     version "0.3.4"
     resolved "https://registry.yarnpkg.com/eslint-import-resolver-node/-/eslint-import-resolver-node-0.3.4.tgz#85ffa81942c25012d8231096ddf679c03042c717"
@@ -4034,13 +4014,6 @@ Lockfile:
       has "^1.0.3"
       jsx-ast-utils "^3.1.0"
       language-tags "^1.0.5"
-  
-  eslint-plugin-prettier@^3.1.4:
-    version "3.1.4"
-    resolved "https://registry.yarnpkg.com/eslint-plugin-prettier/-/eslint-plugin-prettier-3.1.4.tgz#168ab43154e2ea57db992a2cd097c828171f75c2"
-    integrity sha512-jZDa8z76klRqo+TdGDTFJSavwbnWK2ZpqGKNZ+VvweMW516pDUMmQ2koXvxEE4JhzNvTv+radye/bWGBmA6jmg==
-    dependencies:
-      prettier-linter-helpers "^1.0.0"
   
   eslint-plugin-react@^7.21.5:
     version "7.21.5"
@@ -4273,6 +4246,14 @@ Lockfile:
       md5-file "^3.2.3"
       path-browserify "^1.0.0"
       url-parse "^1.4.4"
+  
+  expo-av@~8.6.0:
+    version "8.6.0"
+    resolved "https://registry.yarnpkg.com/expo-av/-/expo-av-8.6.0.tgz#ab434c05241c1dcdca0edd57acb03aa21a3e46cc"
+    integrity sha512-ZZJtCLCDigeDMu2fyv76Kyifu2quhTn6ViYjM2ku/HvFSvUxlb5kK9imuLog3kR+LRxeIiVS9F29r3PCOqI+rQ==
+    dependencies:
+      lodash "^4.17.15"
+      nullthrows "^1.1.0"
   
   expo-constants@~9.2.0:
     version "9.2.0"
@@ -4529,11 +4510,6 @@ Lockfile:
     version "3.1.3"
     resolved "https://registry.yarnpkg.com/fast-deep-equal/-/fast-deep-equal-3.1.3.tgz#3a7d56b559d6cbc3eb512325244e619a65c6c525"
     integrity sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==
-  
-  fast-diff@^1.1.2:
-    version "1.2.0"
-    resolved "https://registry.yarnpkg.com/fast-diff/-/fast-diff-1.2.0.tgz#73ee11982d86caaf7959828d519cfe927fac5f03"
-    integrity sha512-xJuoT5+L99XlZ8twedaRf6Ax2TgQVxvgZOYoPKqZufmJib0tL2tegPBOZb1pVNgIhlqDlA0eO0c3wBvQcmzx4w==
   
   fast-json-stable-stringify@^2.0.0:
     version "2.1.0"
@@ -5071,11 +5047,6 @@ Lockfile:
       has "^1.0.3"
       has-symbols "^1.0.1"
   
-  get-stdin@^6.0.0:
-    version "6.0.0"
-    resolved "https://registry.yarnpkg.com/get-stdin/-/get-stdin-6.0.0.tgz#9e09bf712b360ab9225e812048f71fde9c89657b"
-    integrity sha512-jp4tHawyV7+fkkSKyvjuLZswblUtz+SQKzSWnBbii16BuZksJlU1wuBYXY75r+duh/llF1ur6oNwi+2ZzjKZ7g==
-  
   get-stream@^4.0.0, get-stream@^4.1.0:
     version "4.1.0"
     resolved "https://registry.yarnpkg.com/get-stream/-/get-stream-4.1.0.tgz#c1b255575f3dc21d59bfc79cd3d2b46b1c3a54b5"
@@ -5261,30 +5232,6 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.4.tgz#2256bde14d3632958c465ebc96dc467ca07a29fb"
     integrity sha512-WjKPNJF79dtJAVniUlGGWHYGz2jWxT6VhN/4m1NdkbZ2nOsEF+cI1Edgql5zCRhs/VsQYRvrXctxktVXZUkixw==
   
-  grommet-icons@^4.2.0:
-    version "4.5.0"
-    resolved "https://registry.yarnpkg.com/grommet-icons/-/grommet-icons-4.5.0.tgz#855ad26338ea1a1503eb18fdae428c431332be6a"
-    integrity sha512-q7TNXV996fDh2e++7WapiNFUk0UEll17iEZ2d75W4yz+8Bb3+vdQ1MeT/d1RRlM0pV2KnTpSeR00GeN4KA9upg==
-    dependencies:
-      grommet-styles "^0.2.0"
-  
-  grommet-styles@^0.2.0:
-    version "0.2.0"
-    resolved "https://registry.yarnpkg.com/grommet-styles/-/grommet-styles-0.2.0.tgz#b2eac2b7e2747cb523434d21728ce5234f8ce4f4"
-    integrity sha512-0OMSYuGeyifYKpg4Gv2HzL8rUdd0ddnJ5LbCBKgDuloC71XIwr9g/Fxa6rs737MbPV7OZ4pEm4wvrjH4epzf1A==
-  
-  grommet@^2.15.2:
-    version "2.15.2"
-    resolved "https://registry.yarnpkg.com/grommet/-/grommet-2.15.2.tgz#0aad0c3a14c8e1b468e1460de1bbdf8ecae09269"
-    integrity sha512-Rb9kOC5IkA3zc2E8DZG6Tv7iK0ls45dqcPTMn4BD6x+sTI+scyre2UjCYSpuOkLR4h38Bh4CdfWjQYohx82VJw==
-    dependencies:
-      grommet-icons "^4.2.0"
-      hoist-non-react-statics "^3.2.0"
-      markdown-to-jsx "^6.11.4"
-      polished "^3.4.1"
-      prop-types "^15.7.2"
-      react-desc "^4.1.2"
-  
   gtoken@^4.1.0:
     version "4.1.4"
     resolved "https://registry.yarnpkg.com/gtoken/-/gtoken-4.1.4.tgz#925ff1e7df3aaada06611d30ea2d2abf60fcd6a7"
@@ -5422,7 +5369,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-2.5.5.tgz#c5903cf409c0dfd908f388e619d86b9c1174cb47"
     integrity sha512-rqcy4pJo55FTTLWt+bU8ukscqHeE/e9KWvsOW2b/a3afxQZhwkQdT1rPPCJ0rYXdj4vNcasY8zHTH+jF/qStxw==
   
-  hoist-non-react-statics@^3.0.0, hoist-non-react-statics@^3.2.0, hoist-non-react-statics@^3.3.0, hoist-non-react-statics@^3.3.2:
+  hoist-non-react-statics@^3.0.0, hoist-non-react-statics@^3.3.2:
     version "3.3.2"
     resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz#ece0acaf71d62c2969c2ec59feff42a4b1a85b45"
     integrity sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==
@@ -5438,11 +5385,6 @@ Lockfile:
     version "2.8.8"
     resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.8.8.tgz#7539bd4bc1e0e0a895815a2e0262420b12858488"
     integrity sha512-f/wzC2QaWBs7t9IYqB4T3sR1xviIViXJRJTWBlx2Gf3g0Xi5vI7Yy4koXQ1c9OYDGHN9sBy1DQ2AB8fqZBWhUg==
-  
-  howler@^2.2.0, howler@^2.2.1:
-    version "2.2.1"
-    resolved "https://registry.yarnpkg.com/howler/-/howler-2.2.1.tgz#a521a9b495841e8bb9aa12e651bebba0affc179e"
-    integrity sha512-0iIXvuBO/81CcrQ/HSSweYmbT50fT2mIc9XMFb+kxIfk2pW/iKzDbX1n3fZmDXMEIpYvyyfrB+gXwPYSDqUxIQ==
   
   http-cache-semantics@^4.0.0:
     version "4.1.0"
@@ -6463,11 +6405,6 @@ Lockfile:
       pify "^2.0.0"
       strip-bom "^3.0.0"
   
-  load-script@^1.0.0:
-    version "1.0.0"
-    resolved "https://registry.yarnpkg.com/load-script/-/load-script-1.0.0.tgz#0491939e0bee5643ee494a7e3da3d2bac70c6ca4"
-    integrity sha1-BJGTngvuVkPuSUp+PaPSuscMbKQ=
-  
   locate-path@^2.0.0:
     version "2.0.0"
     resolved "https://registry.yarnpkg.com/locate-path/-/locate-path-2.0.0.tgz#2b568b265eec944c6d9c0de9c3dbbbca0354cd8e"
@@ -6758,14 +6695,6 @@ Lockfile:
     dependencies:
       object-visit "^1.0.0"
   
-  markdown-to-jsx@^6.11.4:
-    version "6.11.4"
-    resolved "https://registry.yarnpkg.com/markdown-to-jsx/-/markdown-to-jsx-6.11.4.tgz#b4528b1ab668aef7fe61c1535c27e837819392c5"
-    integrity sha512-3lRCD5Sh+tfA52iGgfs/XZiw33f7fFX9Bn55aNnVNUd2GzLDkOWyKYYD8Yju2B1Vn+feiEdgJs8T6Tg0xNokPw==
-    dependencies:
-      prop-types "^15.6.2"
-      unquote "^1.1.0"
-  
   marked-terminal@^3.3.0:
     version "3.3.0"
     resolved "https://registry.yarnpkg.com/marked-terminal/-/marked-terminal-3.3.0.tgz#25ce0c0299285998c7636beaefc87055341ba1bd"
@@ -6794,11 +6723,6 @@ Lockfile:
     version "0.3.0"
     resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
     integrity sha1-hxDXrwqmJvj/+hzgAWhUUmMlV0g=
-  
-  memoize-one@^5.1.1:
-    version "5.1.1"
-    resolved "https://registry.yarnpkg.com/memoize-one/-/memoize-one-5.1.1.tgz#047b6e3199b508eaec03504de71229b8eb1d75c0"
-    integrity sha512-HKeeBpWvqiVJD57ZUAsJNm71eHTykffzcLZVYWiVfQeI1rJtuEaS7hQiEpWfVVk18donPwJEcFKIkCmPJNOhHA==
   
   memoizee@^0.4.14:
     version "0.4.14"
@@ -7954,13 +7878,6 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/pngjs/-/pngjs-5.0.0.tgz#e79dd2b215767fd9c04561c01236df960bce7fbb"
     integrity sha512-40QW5YalBNfQo5yRYmiw7Yz6TKKVr3h6970B2YE+3fQpsWcrbj1PzJgxeJ19DRQjhMbKPIuMY8rFaXc8moolVw==
   
-  polished@^3.4.1:
-    version "3.6.7"
-    resolved "https://registry.yarnpkg.com/polished/-/polished-3.6.7.tgz#44cbd0047f3187d83db0c479ef0c7d5583af5fb6"
-    integrity sha512-b4OViUOihwV0icb9PHmWbR+vPqaSzSAEbgLskvb7ANPATVXGiYv/TQFHQo65S53WU9i5EQ1I03YDOJW7K0bmYg==
-    dependencies:
-      "@babel/runtime" "^7.9.2"
-  
   polished@^4.0.3:
     version "4.0.3"
     resolved "https://registry.yarnpkg.com/polished/-/polished-4.0.3.tgz#e2bde249f8884bdabc6997dd3eca225ee32f7a26"
@@ -8001,13 +7918,6 @@ Lockfile:
     version "2.0.0"
     resolved "https://registry.yarnpkg.com/prepend-http/-/prepend-http-2.0.0.tgz#e92434bfa5ea8c19f41cdfd401d741a3c819d897"
     integrity sha1-6SQ0v6XqjBn0HN/UAddBo8gZ2Jc=
-  
-  prettier-linter-helpers@^1.0.0:
-    version "1.0.0"
-    resolved "https://registry.yarnpkg.com/prettier-linter-helpers/-/prettier-linter-helpers-1.0.0.tgz#d23d41fe1375646de2d0104d3454a3008802cf7b"
-    integrity sha512-GbK2cP9nraSSUF9N2XwUwqfzlAFlMNYYl+ShE/V+H8a9uNl/oUqB1w2EL54Jh0OlyRSd8RfWYJ3coVS4TROP2w==
-    dependencies:
-      fast-diff "^1.1.2"
   
   pretty-format@^23.6.0:
     version "23.6.0"
@@ -8076,7 +7986,7 @@ Lockfile:
     dependencies:
       asap "~2.0.6"
   
-  prop-types@^15.5.6, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
+  prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
     version "15.7.2"
     resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
     integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -8233,11 +8143,6 @@ Lockfile:
       fbjs "^0.8.4"
       object-assign "^4.1.0"
   
-  react-desc@^4.1.2:
-    version "4.1.2"
-    resolved "https://registry.yarnpkg.com/react-desc/-/react-desc-4.1.2.tgz#83fc4ede66b2d45ae4ef63c18421474d55972966"
-    integrity sha512-JAVe89uaLr0HZ0IKodnpTPNgNyJ/SPDQnl3VJPVwI+SpebmHvJiBNZEOwX201QmSbsVGqRY8ql/VFPlAx85WzA==
-  
   react-devtools-core@^4.6.0:
     version "4.9.0"
     resolved "https://registry.yarnpkg.com/react-devtools-core/-/react-devtools-core-4.9.0.tgz#39cc4589b4c6fbcb6a18e529ce745a1af3e63ae5"
@@ -8256,23 +8161,15 @@ Lockfile:
       prop-types "^15.6.2"
       scheduler "^0.19.1"
   
-  react-fast-compare@^3.0.1:
-    version "3.2.0"
-    resolved "https://registry.yarnpkg.com/react-fast-compare/-/react-fast-compare-3.2.0.tgz#641a9da81b6a6320f270e89724fb45a0b39e43bb"
-    integrity sha512-rtGImPZ0YyLrscKI9xTpV8psd6I8VAtjKCzQDlzyDvqJA8XOW78TXYQwNRNd8g8JZnDu8q9Fu/1v4HPAVwVdHA==
-  
-  react-howler@^4.0.0:
-    version "4.0.0"
-    resolved "https://registry.yarnpkg.com/react-howler/-/react-howler-4.0.0.tgz#c4c2c8f94916d126919ea98c4d207de5051830d3"
-    integrity sha512-pmX+VWJytGQiZg7g88zj/P+5J/azIa0CC+TDT7U8WKWC6WldOp0mVEmaZ0uSU+lFpiBCo2EoPTm+B+njfby76Q==
-    dependencies:
-      howler "^2.2.0"
-      prop-types "^15.5.6"
-  
   react-is@^16.12.0, react-is@^16.13.0, react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.4:
     version "16.13.1"
     resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
     integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
+  
+  react-native-autocomplete-input@^4.2.0:
+    version "4.2.0"
+    resolved "https://registry.yarnpkg.com/react-native-autocomplete-input/-/react-native-autocomplete-input-4.2.0.tgz#fcfc3d2f19134d4c3394a4e6a5aae13d8c4c9129"
+    integrity sha512-bLZ9FO3NwcqYY3r6hefEEC4VW45L97kXuCyAqKXW1SJkkG/pGcen6zLq3SMFgoQuG3ryrO/ohz7gme7hFwzjoQ==
   
   react-native-elements@^3.0.0-alpha.1:
     version "3.0.0-alpha.1"
@@ -8306,15 +8203,6 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/react-native-iphone-x-helper/-/react-native-iphone-x-helper-1.3.0.tgz#84fd13e6b89cc3aa4daa80ec514bf15cb724d86d"
     integrity sha512-+/bcZWFeZt0xSS/+3CHM5K7qPL4vDO/3ARLIowzFpUPGZiPsv9+NET+XNqqseRYwFJwYMmtX+Q4TZKxAVy09ew==
   
-  react-native-paper@^4.3.0:
-    version "4.3.0"
-    resolved "https://registry.yarnpkg.com/react-native-paper/-/react-native-paper-4.3.0.tgz#07e3e2fa60bbbf898179f10dc74b985a22682152"
-    integrity sha512-mT8nw8ultKak42CrjRLezGLKIrgzFMp/qvNk3jIVsZ/chrxefcEKaSaxePWthcrvL/kaqhk6HSZtW7Ug+QLmhg==
-    dependencies:
-      "@callstack/react-theme-provider" "^3.0.5"
-      color "^3.1.2"
-      react-native-safe-area-view "^0.14.9"
-  
   react-native-ratings@^7.3.0:
     version "7.3.0"
     resolved "https://registry.yarnpkg.com/react-native-ratings/-/react-native-ratings-7.3.0.tgz#32e11e4ed944ba8adbbc995d601df3f131619b6f"
@@ -8334,13 +8222,6 @@ Lockfile:
     version "3.1.4"
     resolved "https://registry.yarnpkg.com/react-native-safe-area-context/-/react-native-safe-area-context-3.1.4.tgz#9b7f883a5ae8da6218d17467a350434005893602"
     integrity sha512-bXx3hqz4LovFoMnJIRGIWL2oJ/PHadXviBKvgZV9yNErtURQLJSn0yfQytVtiqslhaBMZOJwH4R6HiClyofvBg==
-  
-  react-native-safe-area-view@^0.14.9:
-    version "0.14.9"
-    resolved "https://registry.yarnpkg.com/react-native-safe-area-view/-/react-native-safe-area-view-0.14.9.tgz#90ee8383037010d9a5055a97cf97e4c1da1f0c3d"
-    integrity sha512-WII/ulhpVyL/qbYb7vydq7dJAfZRBcEhg4/UWt6F6nAKpLa3gAceMOxBxI914ppwSP/TdUsandFy6lkJQE0z4A==
-    dependencies:
-      hoist-non-react-statics "^2.3.1"
   
   react-native-screens@~2.10.1:
     version "2.10.1"
@@ -8411,17 +8292,6 @@ Lockfile:
       stacktrace-parser "^0.1.3"
       use-subscription "^1.0.0"
       whatwg-fetch "^3.0.0"
-  
-  react-player@^2.6.2:
-    version "2.6.2"
-    resolved "https://registry.yarnpkg.com/react-player/-/react-player-2.6.2.tgz#d41fe842f5bd6a2b1d3ce1ba9ed82c3eb26e0df4"
-    integrity sha512-Wi9DynNSVgddKxac5OzsH0Upk6VRYssvLLGgCRw6vsjzqMX6S5N26WDRNYnLaHykxFNtpPSDc53fXDe52hMaCg==
-    dependencies:
-      deepmerge "^4.0.0"
-      load-script "^1.0.0"
-      memoize-one "^5.1.1"
-      prop-types "^15.7.2"
-      react-fast-compare "^3.0.1"
   
   react-refresh@^0.4.0:
     version "0.4.3"
@@ -9891,11 +9761,6 @@ Lockfile:
     version "1.0.0"
     resolved "https://registry.yarnpkg.com/unpipe/-/unpipe-1.0.0.tgz#b2bf4ee8514aae6165b4817829d21b2ef49904ec"
     integrity sha1-sr9O6FFKrmFltIF4KdIbLvSZBOw=
-  
-  unquote@^1.1.0:
-    version "1.1.1"
-    resolved "https://registry.yarnpkg.com/unquote/-/unquote-1.1.1.tgz#8fded7324ec6e88a0ff8b905e7c098cdc086d544"
-    integrity sha1-j97XMk7G6IoP+LkF58CYzcCG1UQ=
   
   unset-value@^1.0.0:
     version "1.0.0"
