@@ -1,9 +1,9 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
-import { StyleSheet, Text, View, SafeAreaView, Pressable, ImageBackground, Image, TouchableOpacity } from 'react-native';
-import Blackboard from '../assets/blackboard.jpeg';
-import stateList from './states'
-
-import db from '../firebase.config';
+import {
+  StyleSheet, Text, View, SafeAreaView, Pressable,
+} from 'react-native';
+import stateList from './states';
 
 const styles = StyleSheet.create({
   button: {
@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: 30,
-    color: '#00001a'
+    color: '#00001a',
   },
 });
 
@@ -26,14 +26,11 @@ class Welcome extends React.Component {
     super(props);
     this.state = {
       states: stateList,
-      query: '',
-      residentState: ''
     };
   }
 
-
   render() {
-    const { navigation } = this.props
+    const { navigation } = this.props;
 
     return (
       <SafeAreaView style={{ flex: 1 }}>
@@ -78,10 +75,8 @@ class Welcome extends React.Component {
 
         </View>
       </SafeAreaView>
-    )
+    );
   }
-};
-
-
+}
 
 export default Welcome;
