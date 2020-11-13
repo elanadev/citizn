@@ -9,7 +9,7 @@ import {
 import Carousel from 'react-native-snap-carousel';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { Audio } from 'expo-av';
-import Blackboard from '../assets/blackboard.jpeg';
+import Blackboard from '../assets/blackboard2.jpeg';
 
 class Study extends React.Component {
   constructor(props) {
@@ -60,10 +60,9 @@ class Study extends React.Component {
       <ScrollView style={{
         backgroundColor: 'whitesmoke',
         borderRadius: 10,
-        height: 600,
-        padding: 40,
-        marginLeft: 25,
-        marginRight: 25,
+        height: 700,
+        padding: 30,
+        marginHorizontal: 25,
         textShadowColor: 'blue',
         textShadowOffset: { width: 0.3, height: 0.3 },
         textShadowRadius: 1,
@@ -78,7 +77,7 @@ class Study extends React.Component {
           }}
         >
           {/* eslint-disable-next-line jsx-a11y/accessible-emoji */}
-          <Text style={{ fontSize: 20, color: '#fff' }}>🔊</Text>
+          <Text style={{ fontSize: 26, color: '#fff' }}>🔊</Text>
         </TouchableOpacity>
         <Text style={{ fontSize: 12 }}>{item.heading}</Text>
         <Text style={{ fontSize: 12 }}>{item.subheading}</Text>
@@ -101,7 +100,7 @@ class Study extends React.Component {
         <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'center' }}>
           <ImageBackground source={Blackboard} style={{ flex: 1 }}>
 
-            <View style={{ marginTop: 50 }}>
+            <View style={{ marginTop: 30 }}>
               <Carousel
                 layout="default"
                 ref={(ref) => this.carousel = ref}
