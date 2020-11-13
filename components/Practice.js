@@ -8,7 +8,6 @@ import {
 } from 'react-native';
 
 import Carousel from 'react-native-snap-carousel';
-import Collapsible from 'react-native-collapsible';
 import Track from '../assets/track.jpeg';
 
 const styles = StyleSheet.create({
@@ -34,6 +33,26 @@ const styles = StyleSheet.create({
     fontSize: 30,
     color: '#00001a',
   },
+  view: {
+    backgroundColor: 'whitesmoke',
+    borderRadius: 10,
+    height: 600,
+    padding: 40,
+    marginLeft: 25,
+    marginRight: 25,
+    textShadowColor: 'blue',
+    textShadowOffset: { width: 0.3, height: 0.3 },
+    textShadowRadius: 1,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 6,
+    },
+    shadowOpacity: 0.37,
+    shadowRadius: 7.49,
+
+    elevation: 12,
+  },
 });
 
 class Practice extends React.Component {
@@ -50,7 +69,7 @@ class Practice extends React.Component {
   }
 
   // eslint-disable-next-line class-methods-use-this
-  _renderItem({ item, index }) {
+  _renderItem({ item }) {
     const { isCollapsed } = this.state;
 
     const capped = item.responses.map((str) => {
@@ -59,36 +78,10 @@ class Practice extends React.Component {
       return `📜  ${capital}`;
     });
 
-    // let isCollapsed = false;
-    let responses = '';
-    // if (!isCollapsed) {
-    responses = capped.join('\n');
-    // } else {
-    //   responses = [''];
-    // }
+    const responses = capped.join('\n');
 
     return (
-      <ScrollView style={{
-        backgroundColor: 'whitesmoke',
-        borderRadius: 10,
-        height: 600,
-        padding: 40,
-        marginLeft: 25,
-        marginRight: 25,
-        textShadowColor: 'blue',
-        textShadowOffset: { width: 0.3, height: 0.3 },
-        textShadowRadius: 1,
-        shadowColor: '#000',
-        shadowOffset: {
-          width: 0,
-          height: 6,
-        },
-        shadowOpacity: 0.37,
-        shadowRadius: 7.49,
-
-        elevation: 12,
-      }}
-      >
+      <ScrollView style={styles.view}>
         <Text style={{ fontSize: 12 }}>{item.heading}</Text>
         <Text style={{ fontSize: 12 }}>{item.subheading}</Text>
         <Text style={{
@@ -97,24 +90,9 @@ class Practice extends React.Component {
         >
           {item.question}
         </Text>
-        <Pressable
-          onPress={() => {
-            this.setState((prevState) => ({ isCollapsed: !prevState.isCollapsed }), () => console.log(isCollapsed));
-          }}
-          style={({ pressed }) => [
-            {
-              backgroundColor: pressed ? 'rgb(210, 230, 255)' : 'white',
-            },
-            styles.button,
-          ]}
-        >
-          <Text>Show Answer</Text>
-        </Pressable>
-        {/* <Collapsible collapsed> */}
         {
-          isCollapsed ? <Text style={{ fontSize: 16, lineHeight: 32 }}>{responses}</Text> : null
+          !isCollapsed ? <Text style={{ fontSize: 16, lineHeight: 32 }}>{responses}</Text> : null
         }
-        {/* </Collapsible> */}
       </ScrollView>
     );
   }
@@ -128,23 +106,8 @@ class Practice extends React.Component {
       <SafeAreaView style={{ flex: 1, paddingTop: 50 }}>
         <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'center' }}>
           <ImageBackground source={Track} style={{ flex: 1 }}>
-
-            <View style={{ marginTop: 50 }}>
-              <Carousel
-                loop
-                layout="stack"
-                // eslint-disable-next-line no-return-assign
-                ref={(ref) => this.carousel = ref}
-                data={current}
-                sliderWidth={400}
-                itemWidth={415}
-                renderItem={this._renderItem}
-                onSnapToItem={(index) => this.setState({ activeIndex: index, isCollapsed: true })}
-              />
-            </View>
-
             <View style={{
-              flexDirection: 'row', justifyContent: 'space-between', marginHorizontal: 26, marginVertical: 30,
+              flexDirection: 'row', justifyContent: 'space-between', marginHorizontal: 26, marginVertical: 15,
             }}
             >
               <Pressable
@@ -178,6 +141,46 @@ class Practice extends React.Component {
                 <Text>Next 5</Text>
               </Pressable>
             </View>
+
+            <View>
+              <Carousel
+                loop
+                layout="stack"
+                // eslint-disable-next-line no-return-assign
+                ref={(ref) => this.carousel = ref}
+                data={current}
+                sliderWidth={400}
+                itemWidth={415}
+                renderItem={this._renderItem}
+                activeSlideOffset={1}
+                swipeThreshold={1}
+                onBeforeSnapToItem={(index) => this.setState({ activeIndex: index, isCollapsed: true })}
+              // onSnapToItem={(index) => this.setState({ activeIndex: index, isCollapsed: true })}
+              />
+            </View>
+            <View style={{
+              flexDirection: 'row', justifyContent: 'center', marginVertical: 20,
+            }}
+            >
+              <Pressable
+                onPressIn={() => {
+                  this.setState({ isCollapsed: false });
+                }}
+                style={({ pressed }) => [
+                  {
+                    backgroundColor: pressed ? 'rgb(210, 230, 255)' : 'white',
+                  },
+                  styles.button,
+                ]}
+                onPressOut={() => {
+                  this.setState({ isCollapsed: true });
+                }}
+              >
+                <Text>Show Answer</Text>
+              </Pressable>
+
+            </View>
+
           </ImageBackground>
         </View>
         <View />
