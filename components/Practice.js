@@ -43,25 +43,29 @@ class Practice extends React.Component {
       activeIndex: 0,
       currentStart: 0,
       currentEnd: 5,
-      isCollpased: true,
+      isCollapsed: true,
     };
+
+    this._renderItem = this._renderItem.bind(this);
   }
 
   // eslint-disable-next-line class-methods-use-this
   _renderItem({ item, index }) {
+    const { isCollapsed } = this.state;
+
     const capped = item.responses.map((str) => {
       const trimmed = str.trim();
       const capital = trimmed[0].toUpperCase() + trimmed.slice(1);
       return `📜  ${capital}`;
     });
 
-    let isCollapsed = false;
+    // let isCollapsed = false;
     let responses = '';
-    if (!isCollapsed) {
-      responses = capped.join('\n');
-    } else {
-      responses = [''];
-    }
+    // if (!isCollapsed) {
+    responses = capped.join('\n');
+    // } else {
+    //   responses = [''];
+    // }
 
     return (
       <ScrollView style={{
@@ -95,8 +99,7 @@ class Practice extends React.Component {
         </Text>
         <Pressable
           onPress={() => {
-            isCollapsed = !isCollapsed;
-            console.log(isCollapsed);
+            this.setState((prevState) => ({ isCollapsed: !prevState.isCollapsed }), () => console.log(isCollapsed));
           }}
           style={({ pressed }) => [
             {
@@ -107,9 +110,11 @@ class Practice extends React.Component {
         >
           <Text>Show Answer</Text>
         </Pressable>
-        <Collapsible collapsed>
-          <Text style={{ fontSize: 16, lineHeight: 32 }}>{responses}</Text>
-        </Collapsible>
+        {/* <Collapsible collapsed> */}
+        {
+          isCollapsed ? <Text style={{ fontSize: 16, lineHeight: 32 }}>{responses}</Text> : null
+        }
+        {/* </Collapsible> */}
       </ScrollView>
     );
   }
@@ -128,6 +133,7 @@ class Practice extends React.Component {
               <Carousel
                 loop
                 layout="stack"
+                // eslint-disable-next-line no-return-assign
                 ref={(ref) => this.carousel = ref}
                 data={current}
                 sliderWidth={400}
