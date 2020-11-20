@@ -15,6 +15,6 @@ Citizn is a mobile app designed to assist applicants for US citizenship to prepa
 To run this project:
 ```
 - Download repo
-- yarn install
+- yarn install or npm install
 - expo start
 ```
