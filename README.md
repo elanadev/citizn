@@ -9,7 +9,6 @@ Citizn is a mobile app designed to assist applicants for US citizenship to prepa
 - React Native SDK 39.0.4
 - Expo 39.0.2
 - Firebase 8.00
-- styled-components
 
 ## Launch
 To run this project:
