@@ -1,3 +1,5 @@
+![](citizn demo.gif)
+
 # citizn
 
 ## About
