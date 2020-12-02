@@ -1,5 +1,5 @@
 ![](demo.gif)
-# citizn
+# citizn 
 
 ## About
 Citizn is a mobile app designed to assist applicants for US citizenship to prepare for the USCIS Immigration interview exams. The app currently provides two modes. 
