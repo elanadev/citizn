@@ -1,5 +1,4 @@
-![](citizn demo.gif)
-
+![]('citizen demo.gif')
 # citizn
 
 ## About
